@@ -462,10 +462,10 @@ Pull requests are welcome. Please visit [#209](https://github.com/grassdionera/g
 
 1. Copyright © 2008 Henri Hakkinen
 2. Copyright © 2015-2021 [Arun Prakash Jana](https://github.com/jarun)
+2. Copyright © 2022- [grassdionera](https://github.com/grassdionera)
 3. [Zhiming Wang](https://github.com/zmwangx)
 4. [Johnathan Jenkins](https://github.com/shaggytwodope)
 5. [SZ Lin](https://github.com/szlin)
-5. [grassdionera](https://github.com/grassdionera)
 
 Special thanks to [jeremija](https://github.com/jeremija) and [Narrat](https://github.com/Narrat) for their contributions.
 
