@@ -221,7 +221,7 @@ To remove `googler` and associated docs, run
 
 To install the latest stable version, run
 
-    $ sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/grassdionera/googler/v4.3.4/googler && sudo chmod +x /usr/local/bin/googler
+    $ sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/grassdionera/googler/v4.3.5/googler && sudo chmod +x /usr/local/bin/googler
 
 You could then let googler upgrade itself by running
 
