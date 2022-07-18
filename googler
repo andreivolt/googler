@@ -2359,6 +2359,10 @@ class GoogleParser(object):
             div_selector = 'div[data-hveid]'
             title_selector = 'div'
             h3_selector = 'div'
+        elif self.videos:
+            div_selector = 'video-voyager'
+            title_selector = 'div.ct3b9e'
+            h3_selector = 'h3'
         else:
             div_selector = 'div.tF2Cxc'
             title_selector = 'div.yuRUbf'
@@ -2373,6 +2377,8 @@ class GoogleParser(object):
                 # Skip smart cards.
                 continue
             try:
+                abstract_node = None
+                metadata_node = None
                 if div_g.select('.st'):
                     # Old class structure, stopped working some time in
                     # September 2020, but kept just in case.
@@ -2415,29 +2421,31 @@ class GoogleParser(object):
                         newstitle = title.split('.')
                         #title = newstitle[1]
 
-                    abstract_node = details_node.select('span')
-                    metadata_node = details_node.select('.f, span ~ div')
+                    if details_node:
+                        abstract_node = details_node.select('span')
+                        metadata_node = details_node.select('.f, span ~ div')
                 url = self.unwrap_link(a.attr('href'))
                 matched_keywords = []
                 abstract = ''
                 # BFS descendant nodes. Necessary to locate matches (b,
                 # em) while skipping metadata (.f).
-                abstract_nodes = collections.deque([abstract_node])
-                while abstract_nodes:
-                    node = abstract_nodes.popleft()
-                    if node:
-                        if 'f' in node.classes:
-                            # .f is handled as metadata instead.
-                            continue
-                        if node.tag in ['b', 'em']:
-                            matched_keywords.append({'phrase': node.text, 'offset': len(abstract)})
-                            abstract += node.text
-                            continue
-                        if not node.children:
-                            abstract += node.text
-                            continue
-                        for child in node.children:
-                            abstract_nodes.append(child)
+                if abstract_node:
+                    abstract_nodes = collections.deque([abstract_node])
+                    while abstract_nodes:
+                        node = abstract_nodes.popleft()
+                        if node:
+                            if 'f' in node.classes:
+                                # .f is handled as metadata instead.
+                                continue
+                            if node.tag in ['b', 'em']:
+                                matched_keywords.append({'phrase': node.text, 'offset': len(abstract)})
+                                abstract += node.text
+                                continue
+                            if not node.children:
+                                abstract += node.text
+                                continue
+                            for child in node.children:
+                                abstract_nodes.append(child)
 
 
                 if self.news:
