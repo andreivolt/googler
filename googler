@@ -2360,8 +2360,8 @@ class GoogleParser(object):
             title_selector = 'div'
             h3_selector = 'div'
         else:
-            div_selector = 'div.g'
-            title_selector = 'div.tF2Cxc > div'
+            div_selector = 'div.tF2Cxc'
+            title_selector = 'div.yuRUbf'
             h3_selector = 'h3'
 
         # cw is short for collapse_whitespace.
@@ -2398,13 +2398,15 @@ class GoogleParser(object):
                     # As of January 15th 2021, the html class is not rc anymore, it's tF2Cxc.
                     # This approach is not very resilient to changes by Google, but it works for now.
                     # title_node, details_node, *_ = div_g.select_all('div.rc > div')
-                    title_node, details_node, *_ = div_g.select_all(title_selector)
-                    if 'yuRUbf' not in title_node.classes:
-                        logger.debug('unexpected title node class(es): expected %r, got %r',
-                                     'yuRUbf', ' '.join(title_node.classes))
-                    if 'IsZvec' not in details_node.classes:
-                        logger.debug('unexpected details node class(es): expected %r, got %r',
-                                     'IsZvec', ' '.join(details_node.classes))
+                    main_node = div_g.select('div')
+                    details_node = main_node.select('div[data-content-feature=1]')
+                    if 'jtfYYd' not in main_node.classes:
+                        main_node = div_g
+                        details_node = main_node.select('div.IsZvec')
+
+                    title_node = div_g.select(title_selector)
+
+
                     a = title_node.select('a')
                     h3 = a.select(h3_selector)
                     title = h3.text
@@ -2423,18 +2425,20 @@ class GoogleParser(object):
                 abstract_nodes = collections.deque([abstract_node])
                 while abstract_nodes:
                     node = abstract_nodes.popleft()
-                    if 'f' in node.classes:
-                        # .f is handled as metadata instead.
-                        continue
-                    if node.tag in ['b', 'em']:
-                        matched_keywords.append({'phrase': node.text, 'offset': len(abstract)})
-                        abstract += node.text
-                        continue
-                    if not node.children:
-                        abstract += node.text
-                        continue
-                    for child in node.children:
-                        abstract_nodes.append(child)
+                    if node:
+                        if 'f' in node.classes:
+                            # .f is handled as metadata instead.
+                            continue
+                        if node.tag in ['b', 'em']:
+                            matched_keywords.append({'phrase': node.text, 'offset': len(abstract)})
+                            abstract += node.text
+                            continue
+                        if not node.children:
+                            abstract += node.text
+                            continue
+                        for child in node.children:
+                            abstract_nodes.append(child)
+
 
                 if self.news:
                     abstract = abstract + " - " + newstitle[-1]

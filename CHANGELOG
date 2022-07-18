@@ -1,4 +1,9 @@
 googler 4.3.2
+2022-07-18
+
+- Fix parsing of Results
+
+googler 4.3.2
 2021-01-21
 
 - Fix html class of result nodes (#393, fixes #392)

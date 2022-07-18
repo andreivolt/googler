@@ -2,7 +2,7 @@ name: googler
 maintainer: Arun Prakash Jana <engineerarun@gmail.com>
 license: GPLv3
 summary: Google from the command-line.
-homepage: https://github.com/jarun/googler
+homepage: https://github.com/grassdionera/googler
 commands:
   install:
     - make PREFIX="/usr" install DESTDIR="${BP_DESTDIR}"
