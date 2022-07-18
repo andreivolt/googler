@@ -119,8 +119,8 @@ text_browsers = ['elinks', 'links', 'lynx', 'w3m', 'www-browser']
 # before running `make install'.
 
 ENABLE_SELF_UPGRADE_MECHANISM = True
-API_REPO_BASE = 'https://api.github.com/repos/jarun/googler'
-RAW_DOWNLOAD_REPO_BASE = 'https://raw.githubusercontent.com/jarun/googler'
+API_REPO_BASE = 'https://api.github.com/repos/grassdionera/googler'
+RAW_DOWNLOAD_REPO_BASE = 'https://raw.githubusercontent.com/grassdionera/googler'
 
 debugger = False
 
@@ -2932,7 +2932,7 @@ class GooglerCmd(object):
                     printerr('The fix has been pushed to master, pending a release.')
                     printerr('Please download the master version https://git.io/googler or wait for a release.')
                 else:
-                    printerr('The issue is tracked at https://github.com/jarun/googler/issues/%s.' % tracking_issue)
+                    printerr('The issue is tracked at https://github.com/grassdionera/googler/issues/%s.' % tracking_issue)
                 return
         except RuntimeError:
             pass
@@ -3296,7 +3296,7 @@ class GooglerArgumentParser(argparse.ArgumentParser):
         Copyright © 2015-2021 Arun Prakash Jana <engineerarun@gmail.com>
         Zhiming Wang <zmwangx@gmail.com>
         License: GPLv3
-        Webpage: https://github.com/jarun/googler
+        Webpage: https://github.com/grassdionera/googler
         """ % _VERSION_))
 
     # Augment print_help to print more than synopsis and options
