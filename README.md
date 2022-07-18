@@ -1,10 +1,10 @@
-<h1 align="center"><img src="https://cdn.rawgit.com/jarun/googler/master/googler.svg" alt="googler" /></h1>
+<h1 align="center"><img src="https://cdn.rawgit.com/grassdionera/googler/master/googler.svg" alt="googler" /></h1>
 
 <p align="center">
-<a href="https://github.com/jarun/googler/releases/latest"><img src="https://img.shields.io/github/release/jarun/googler.svg?maxAge=600" alt="Latest release" /></a>
+<a href="https://github.com/grassdionera/googler/releases/latest"><img src="https://img.shields.io/github/release/grassdionera/googler.svg?maxAge=600" alt="Latest release" /></a>
 <a href="https://repology.org/project/googler/versions"><img src="https://repology.org/badge/tiny-repos/googler.svg" alt="Availability"></a>
-<a href="https://github.com/jarun/googler/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-GPLv3-yellowgreen.svg?maxAge=2592000" alt="License" /></a>
-<a href="https://github.com/jarun/googler/actions"><img src="https://github.com/jarun/googler/workflows/ci/badge.svg?branch=master" alt="Build Status" /></a>
+<a href="https://github.com/grassdionera/googler/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-GPLv3-yellowgreen.svg?maxAge=2592000" alt="License" /></a>
+<a href="https://github.com/grassdionera/googler/actions"><img src="https://github.com/grassdionera/googler/workflows/ci/badge.svg?branch=master" alt="Build Status" /></a>
 </p>
 
 <p align="center">
@@ -111,11 +111,11 @@ Here are some usage examples:
 
 More fun stuff you can try with `googler`:
 
-- [googler on the iPad](https://github.com/jarun/googler/wiki/googler-on-the-iPad)
-- [Print content of results to terminal or listen to it](https://github.com/jarun/googler/wiki/Print-content-of-results-to-terminal-or-listen-to-it)
-- [Terminal Reading Mode or Reader View](https://github.com/jarun/googler/wiki/Terminal-Reading-Mode-or-Reader-View)
-- [Stream YouTube videos on desktop](https://github.com/jarun/googler/wiki/Search-and-stream-videos-from-the-terminal)
-- [Search error on StackOverflow from terminal](https://github.com/jarun/googler/wiki/Search-error-on-StackOverflow-from-terminal)
+- [googler on the iPad](https://github.com/grassdionera/googler/wiki/googler-on-the-iPad)
+- [Print content of results to terminal or listen to it](https://github.com/grassdionera/googler/wiki/Print-content-of-results-to-terminal-or-listen-to-it)
+- [Terminal Reading Mode or Reader View](https://github.com/grassdionera/googler/wiki/Terminal-Reading-Mode-or-Reader-View)
+- [Stream YouTube videos on desktop](https://github.com/grassdionera/googler/wiki/Search-and-stream-videos-from-the-terminal)
+- [Search error on StackOverflow from terminal](https://github.com/grassdionera/googler/wiki/Search-error-on-StackOverflow-from-terminal)
 
 ### Table of contents
 
@@ -193,11 +193,11 @@ before installation.
 
 #### Release packages
 
-Packages for Arch Linux, CentOS, Debian, Fedora, openSUSE and Ubuntu are available with the [latest stable release](https://github.com/jarun/googler/releases/latest).
+Packages for Arch Linux, CentOS, Debian, Fedora, openSUSE and Ubuntu are available with the [latest stable release](https://github.com/grassdionera/googler/releases/latest).
 
 #### From source
 
-If you have git installed, clone this repository. Otherwise download the [latest stable release](https://github.com/jarun/googler/releases/latest) or [development version](https://github.com/jarun/googler/archive/master.zip).
+If you have git installed, clone this repository. Otherwise download the [latest stable release](https://github.com/grassdionera/googler/releases/latest) or [development version](https://github.com/grassdionera/googler/archive/master.zip).
 
 To install to the default location (`/usr/local`):
 
@@ -221,7 +221,7 @@ To remove `googler` and associated docs, run
 
 To install the latest stable version, run
 
-    $ sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/jarun/googler/v4.3.3/googler && sudo chmod +x /usr/local/bin/googler
+    $ sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/grassdionera/googler/v4.3.3/googler && sudo chmod +x /usr/local/bin/googler
 
 You could then let googler upgrade itself by running
 
@@ -229,7 +229,7 @@ You could then let googler upgrade itself by running
 
 Similarly, if you want to install from git master (*risky*), run
 
-    $ sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/jarun/googler/master/googler && sudo chmod +x /usr/local/bin/googler
+    $ sudo curl -o /usr/local/bin/googler https://raw.githubusercontent.com/grassdionera/googler/master/googler && sudo chmod +x /usr/local/bin/googler
 
 and upgrade by running
 
@@ -333,7 +333,7 @@ The alias serves both the purposes of using config files:
 
 #### googler @t
 
-`googler @t` is a convenient add-on to Google Site Search with unique keywords. While `googler` has an integrated option to search a site, we simplified it further with aliases. The file [googler_at](https://github.com/jarun/googler/blob/master/auto-completion/googler_at/googler_at) contains a list of website search aliases. To source it, run:
+`googler @t` is a convenient add-on to Google Site Search with unique keywords. While `googler` has an integrated option to search a site, we simplified it further with aliases. The file [googler_at](https://github.com/grassdionera/googler/blob/master/auto-completion/googler_at/googler_at) contains a list of website search aliases. To source it, run:
 
     $ source googler_at
 or,
@@ -435,7 +435,7 @@ On WSL, GUI browsers on the Windows side cannot be detected by default. You need
 
 3. Google News service is not available if the language is `dk` (Denmark), `fi` (Finland) or `is` (Iceland). Use `-l en`. Please refer to #187 for more information.
 
-4. Some users have reported problems with a colored omniprompt (refer to issue [#203](https://github.com/jarun/googler/issues/203)) with iTerm2 on macOS. To force a plain omniprompt:
+4. Some users have reported problems with a colored omniprompt (refer to issue [#203](https://github.com/grassdionera/googler/issues/203)) with iTerm2 on macOS. To force a plain omniprompt:
 
        export DISABLE_PROMPT_COLOR=1
 
@@ -454,9 +454,9 @@ googler. Refer to the latter for demos and usage instructions.
 
 ### Contributions
 
-Pull requests are welcome. Please visit [#209](https://github.com/jarun/googler/issues/209) for a list of TODOs.
+Pull requests are welcome. Please visit [#209](https://github.com/grassdionera/googler/issues/209) for a list of TODOs.
 <br>
-<p><a href="https://gitter.im/jarun/googler"><img src="https://img.shields.io/gitter/room/jarun/googler.svg?maxAge=2592000" alt="gitter chat" /></a></p>
+<p><a href="https://gitter.im/grassdionera/googler"><img src="https://img.shields.io/gitter/room/grassdionera/googler.svg?maxAge=2592000" alt="gitter chat" /></a></p>
 
 ### Developers
 
