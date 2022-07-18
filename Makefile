@@ -1,4 +1,4 @@
-PREFIX ?= /usr/local
+PREFIX ?= ~/.local
 BINDIR = $(DESTDIR)$(PREFIX)/bin
 MANDIR = $(DESTDIR)$(PREFIX)/share/man/man1
 DOCDIR = $(DESTDIR)$(PREFIX)/share/doc/googler
