@@ -27,14 +27,14 @@ packages:
   #     - make
   #   deps:
   #     - python
-  centos8.0:
-    builddeps:
-      - make
-    deps:
-      - python3
-    commands:
-      precompile:
-        - dnf install python3
+  # centos8.0:
+  #   builddeps:
+  #     - make
+  #   deps:
+  #     - python3
+  #   commands:
+  #     precompile:
+  #       - dnf install python3
   # debian9:
   #   builddeps:
   #     - make
@@ -85,8 +85,8 @@ packages:
       - make
     deps:
       - python3
-  ubuntu22.04:
-    builddeps:
-      - make
-    deps:
-      - python3
+  # ubuntu22.04:
+  #   builddeps:
+  #     - make
+  #   deps:
+  #     - python3
