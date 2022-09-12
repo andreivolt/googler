@@ -1,5 +1,5 @@
 name: googler
-maintainer: Arun Prakash Jana <engineerarun@gmail.com>
+maintainer: Michael Graß <grass@dionera.com>
 license: GPLv3
 summary: Google from the command-line.
 homepage: https://github.com/grassdionera/googler
@@ -12,21 +12,21 @@ packages:
 #      - make
 #    deps:
 #      - python
-  centos7.5:
-    builddeps:
-      - make
-    deps:
-      - python
-  centos7.6:
-    builddeps:
-      - make
-    deps:
-      - python
-  centos7.7:
-    builddeps:
-      - make
-    deps:
-      - python
+  # centos7.5:
+  #   builddeps:
+  #     - make
+  #   deps:
+  #     - python
+  # centos7.6:
+  #   builddeps:
+  #     - make
+  #   deps:
+  #     - python
+  # centos7.7:
+  #   builddeps:
+  #     - make
+  #   deps:
+  #     - python
   centos8.0:
     builddeps:
       - make
@@ -35,11 +35,11 @@ packages:
     commands:
       precompile:
         - dnf install python3
-  debian9:
-    builddeps:
-      - make
-    deps:
-      - python3
+  # debian9:
+  #   builddeps:
+  #     - make
+  #   deps:
+  #     - python3
   debian10:
     builddeps:
       - make
@@ -65,22 +65,27 @@ packages:
       - make
     deps:
       - python3
-  opensuse.tumbleweed:
-    builddeps:
-      - make
-    deps:
-      - python3
-  ubuntu16.04:
-    builddeps:
-      - make
-    deps:
-      - python3
-  ubuntu18.04:
-    builddeps:
-      - make
-    deps:
-      - python3
+  # opensuse.tumbleweed:
+  #   builddeps:
+  #     - make
+  #   deps:
+  #     - python3
+  # ubuntu16.04:
+  #   builddeps:
+  #     - make
+  #   deps:
+  #     - python3
+  # ubuntu18.04:
+  #   builddeps:
+  #     - make
+  #   deps:
+  #     - python3
   ubuntu20.04:
+    builddeps:
+      - make
+    deps:
+      - python3
+  ubuntu22.04:
     builddeps:
       - make
     deps:

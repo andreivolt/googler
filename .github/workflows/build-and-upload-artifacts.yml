@@ -8,13 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Create draft release with artifacts
-        run: |
-          tag=${GITHUB_REF##*/}
-          asset_options=()
-          hub release create --draft "${asset_options[@]}" --message "googler $tag" "$tag"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -27,3 +20,13 @@ jobs:
         run: |
           version=${GITHUB_REF##*/v}
           packagecore -o dist/ "$version"
+      - name: Create draft release with artifacts
+        run: |
+          tag=${GITHUB_REF##*/}
+          asset_options=()
+          for asset in dist/*; do
+            asset_options+=(-a "$asset")
+          done
+          hub release create --draft "${asset_options[@]}" --message "googler $tag" "$tag"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
