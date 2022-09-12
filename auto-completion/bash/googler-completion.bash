@@ -41,7 +41,7 @@ _googler () {
         -v --version
         -d --debug
     )
-    opts_with_arg=(
+    opts_with_args=(
         -s --start
         -n --count
         -c --tld
@@ -64,7 +64,7 @@ _googler () {
     else
         # Do not complete option arguments; only autocomplete positional
         # arguments (queries).
-        for opt in "${opts_with_arg[@]}"; do
+        for opt in "${opts_with_args[@]}"; do
             [[ $opt == $prev ]] && return 1
         done
 
