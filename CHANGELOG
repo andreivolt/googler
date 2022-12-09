@@ -1,3 +1,14 @@
+googler 4.3.13
+2022-12-09
+
+- version number correction
+- removed python version 3.6 from build
+
+googler 4.3.7-4.3.12
+2022-09-19
+
+- no changes, only github actions testing
+
 googler 4.3.6
 2022-07-18
 
